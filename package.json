@@ -17,6 +17,10 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@bufbuild/buf": "^1.57.0",
+    "@bufbuild/protobuf": "^2.7.0",
+    "@bufbuild/protoc-gen-es": "^2.7.0",
+    "@connectrpc/connect": "^2.1.0",
     "@connectrpc/connect-query": "^2.1.1",
     "@connectrpc/connect-web": "^2.1.0",
     "@tanstack/react-query": "^5.85.5",

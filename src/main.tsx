@@ -2,6 +2,7 @@ import "./styles/index.css";
 
 import { StrictMode } from "react";
 
+import { TransportProvider } from "@connectrpc/connect-query";
 import { createConnectTransport } from "@connectrpc/connect-web";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
@@ -12,14 +13,18 @@ import { NotFound } from "./components/not-found";
 import { PendingComponent } from "./components/pending-component";
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
-import { TransportProvider } from "@connectrpc/connect-query";
 
 
 const connectTransport = createConnectTransport({
   baseUrl: import.meta.env.VITE_API_URL,
-
-
+  // We use useBinaryFormat false during development to make it easier to debug
+  // We should enable it in production
+  useBinaryFormat: false,
+  // Interceptors apply to all calls running through this transport.
+  // Could be useful for logging, authentication, etc.
+  interceptors: [],
 });
+
 const queryClient = new QueryClient();
 
 // Create a new router instance
