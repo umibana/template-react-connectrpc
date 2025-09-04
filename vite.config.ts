@@ -20,10 +20,4 @@ export default defineConfig({
     }),
     !isTest && tanstackRouter(),
   ],
-  test: {
-    globals: true,
-    isolate: true,
-    environment: "jsdom",
-    setupFiles: "./tests/setup.tsx",
-  },
 });

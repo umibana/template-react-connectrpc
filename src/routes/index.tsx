@@ -1,4 +1,4 @@
-import { createLazyFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 import { TechCard } from "@/components/tech-cards";
 
@@ -10,7 +10,7 @@ import {
   ViteIcon,
 } from "../components/tech-icons";
 
-export const Route = createLazyFileRoute("/")({
+export const Route = createFileRoute("/")({
   component: WelcomeComponent,
 });
 

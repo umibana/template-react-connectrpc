@@ -5,9 +5,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import reactCompiler from "eslint-plugin-react-compiler";
-import eslintConfigPrettier from "eslint-config-prettier";
 import eslint from "@eslint/js";
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import react from "@eslint-react/eslint-plugin";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import eslintPluginImportX from "eslint-plugin-import-x";
@@ -88,6 +86,4 @@ export default tseslint.config(
       "simple-import-sort/exports": "error",
     },
   },
-  eslintPluginPrettierRecommended,
-  eslintConfigPrettier,
 );

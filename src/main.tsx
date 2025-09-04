@@ -2,6 +2,7 @@ import "./styles/index.css";
 
 import { StrictMode } from "react";
 
+import { createConnectTransport } from "@connectrpc/connect-web";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import ReactDOM from "react-dom/client";
@@ -11,7 +12,14 @@ import { NotFound } from "./components/not-found";
 import { PendingComponent } from "./components/pending-component";
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
+import { TransportProvider } from "@connectrpc/connect-query";
 
+
+const connectTransport = createConnectTransport({
+  baseUrl: import.meta.env.VITE_API_URL,
+
+
+});
 const queryClient = new QueryClient();
 
 // Create a new router instance
@@ -40,9 +48,11 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
+      <TransportProvider transport={connectTransport}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>
+    </TransportProvider>
     </StrictMode>,
   );
 }
