@@ -29,4 +29,5 @@ src/generated/**/*
 .tanstack
 .bun.lockb
 bun.lockb
+routeTree.gen.ts
 
