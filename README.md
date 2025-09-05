@@ -95,11 +95,3 @@ We use the following libraries to make DX better
 
 [Tanstack Query](https://tanstack.com/query/latest/docs/framework/react/overview): Requests state management made easier, compatible with ConnectRPC.
 
----
-
-<div align="center">
-
-
-[⬆ Back to top](#template-react-connectrpc)
-
-</div>
