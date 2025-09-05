@@ -28,4 +28,5 @@ src/generated/**/*
 .env
 .tanstack
 .bun.lockb
+bun.lockb
 
