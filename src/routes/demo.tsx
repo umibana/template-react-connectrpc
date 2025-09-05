@@ -16,8 +16,6 @@ export const Route = createFileRoute("/demo")({
 function TanStackDemo() {
   // useState to handle our input 
   const [nameInput, setNameInput] = useState("");
-
-
   // We use useQuery to send our request (nameInput) to the greet Method from GreetService
   // enabled is set to false and we use handleSend to manually trigger the request
   const {data:response, refetch:handleSend, status,error, isLoading} = useQuery(greet,{name:nameInput}, {

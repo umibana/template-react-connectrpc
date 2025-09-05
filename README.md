@@ -1,26 +1,17 @@
 # React 19 + TypeScript + ConnectRPC Template
 
 
-- We use buf generate to build typescript files from the protocol buffers
-- In this case, we have the protos in another folder
-- ```buf generate``` will follow the config detailed in **buf.gen.yaml**
-```js
-bunx buf generate connect-go-test/greet/v1/greet.proto  
-```
-- After this command is completed, we will get files written to the generated/greet folder
-- We will import the file that ends with connectquery.ts to handle useQuery
-- For types, we will import the *_pb.ts files
-
 ## Key Features
 - **TypeScript** - Type-safe development 
 - **TailwindCSS** - Utility-first CSS 
 - **TanStack Router** - Type-safe routing with code splitting
 - **ConnectRPC** - Web RPC with Protocol Buffers
 - **Zustand** - Global state management
-## 📚 Documentation
+
 
 ### Getting Started
 
+#### Installing dependencies
 Two options here either use github's `Use this template` button or do it by cloning the code
 
 ```bash
@@ -36,6 +27,19 @@ npm install
 # Start development server
 npm dev
 ```
+
+#### Setting up the environment
+1. The .env.example should be renamed to .env and change the values according to the endpoint of your backend server.
+2. We need to generate the files according to your protocol buffer file definitions.
+  - We use buf generate to build typescript files from the protocol buffers
+  - In this case, we have the protos in another folder (Backend folder)
+  - ```buf generate``` will follow the config detailed in **buf.gen.yaml**
+  ```js
+  bunx buf generate connect-go-test/greet/v1/greet.proto  
+  ```
+  - After this command is completed, we will get files written to the generated/greet folder
+  - We will import the file that ends with connectquery.ts to handle useQuery
+  - For types, we will import the *_pb.ts files
 
 ### Available Scripts
 
