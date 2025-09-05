@@ -1,4 +1,4 @@
-# React 19 + TypeScript + ConnectRPC Template
+# React + TypeScript + ConnectRPC Template
 
 
 ## Key Features
@@ -7,7 +7,6 @@
 - **TanStack Router** - Type-safe routing with code splitting
 - **ConnectRPC** - Web RPC with Protocol Buffers
 - **Zustand** - Global state management
-
 
 ### Getting Started
 
@@ -41,7 +40,37 @@ npm dev
   - We will import the file that ends with connectquery.ts to handle useQuery
   - For types, we will import the *_pb.ts files
 
-### Available Scripts
+### Development 
+
+
+### Routes
+
+Tanstack Router provides an easy way of routing using files using the following function. Please check ```hello.tsx``` and ```demo.tsx``` for an example.
+```js
+export const Route = createFileRoute('/hello')({
+  component: TestPage,
+})
+```
+
+Tanstack Router also provides default routes for whenever something is loading or a page had an error. you can find these in the components folder, in the following files: ```error-display.tsx```, ```not-found.tsx``` and ```pending-component.tsx```
+
+### Sending Request and receiving responses.
+For fetching data we use ConnectRPC and Tanstack Query for a better developer experience.
+Before we start, we need to import the generated file (that ends with connectquery.ts).
+Once we have that file, we can call that method using the following function, where greet is the method, and the rest the parameters it needs.
+```js
+  const {data,status,error,isLoading,refetch} = useQuery(greet,{name:nameInput}
+```
+
+### Installing Components
+If you want to install Tailwind compatible pre-made components you can use shadCN to install from the command line using the following command.
+```
+npx shadcn@latest add button
+```
+You can take a look at [shadcn](https://ui.shadcn.com/docs/components) for a list of all available components.
+
+
+
 
 | Command             | Description                |
 | ------------------- | -------------------------- |
@@ -63,7 +92,8 @@ npm dev
 │   └── vite.svg
 ├── README.md
 ├── src
-│   ├── components
+│   ├── components 
+│       │── ui (ShadCN components)
 │   ├── main.tsx
 │   ├── generated (Typescript auto-generated files)
 │   ├── routes
