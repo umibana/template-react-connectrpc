@@ -90,13 +90,16 @@ We use the following libraries to make DX better
 [shadcn/ui](https://ui.shadcn.com): A modern library that combines design tokens and utility classes for rapid UI development.
 
 ### Requests and Data transfer
+
 [ConnectRPC](https://connectrpc.com/docs/web/getting-started/): RPC compatible with gRPC,Protocol Buffers and JSON, can auto generate code.
+
 [Tanstack Query](https://tanstack.com/query/latest/docs/framework/react/overview): Requests state management made easier, compatible with ConnectRPC.
+
 ---
 
 <div align="center">
 
 
-[⬆ Back to top](#react-19--typescript--vite-template)
+[⬆ Back to top](#template-react-connectrpc)
 
 </div>
