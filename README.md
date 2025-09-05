@@ -1,6 +1,15 @@
 # React 19 + TypeScript + Vite Template
 
-> A modern, feature-rich template for building scalable React applications with the latest tools and best practices.
+
+- We use buf generate to build typescript files from the protocol buffers
+- In this case, we have the protos in another folder
+- ```buf generate``` will follow the config detailed in **buf.gen.yaml**
+```js
+bunx buf generate connect-go-test/greet/v1/greet.proto  
+```
+- After this command is completed, we will get files written to the generated/greet folder
+- We will import the file that ends with connectquery.ts to handle useQuery
+- For types, we will import the *_pb.ts files
 
 ## ✨ Key Features
 

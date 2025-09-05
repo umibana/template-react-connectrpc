@@ -7,7 +7,6 @@ import tseslint from "typescript-eslint";
 import reactCompiler from "eslint-plugin-react-compiler";
 import eslint from "@eslint/js";
 import react from "@eslint-react/eslint-plugin";
-import simpleImportSort from "eslint-plugin-simple-import-sort";
 import eslintPluginImportX from "eslint-plugin-import-x";
 import pluginRouter from "@tanstack/eslint-plugin-router";
 import pluginQuery from "@tanstack/eslint-plugin-query";
@@ -33,7 +32,6 @@ export default tseslint.config(
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
       "react-compiler": reactCompiler,
-      "simple-import-sort": simpleImportSort,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -56,34 +54,6 @@ export default tseslint.config(
           ignoreRestSiblings: true,
         },
       ],
-      //simple-import-sort
-      "simple-import-sort/imports": [
-        "error",
-        {
-          groups: [
-            ["^\\u0000"],
-            ["^.+\\.s?css$"],
-            [
-              "^node:.*\\u0000$",
-              "^@?\\w.*\\u0000$",
-              "^[^.].*\\u0000$",
-              "^\\..*\\u0000$",
-            ],
-            ["^react$", "^react-dom$", "^node:"],
-            ["^next"],
-            // Packages.
-            // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-            ["^@?\\w"],
-            ["^~(/.*|$)"],
-            ["^@(/.*|$)"],
-            // Parent imports. Put `..` last.
-            ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-            // Other relative imports. Put same-folder imports and `.` last.
-            ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-          ],
-        },
-      ],
-      "simple-import-sort/exports": "error",
     },
   },
 );

@@ -1,0 +1,14 @@
+# buf.gen.yaml defines a local generation template.
+# For details, see https://buf.build/docs/configuration/v2/buf-gen-yaml
+version: v2
+plugins:
+  # Generate base protobuf types
+  - local: protoc-gen-es
+    out: src/generated
+    include_imports: true
+    opt: target=ts
+  # Generate ConnectRPC Query hooks
+  - local: protoc-gen-connect-query
+    out: src/generated
+    include_imports: true
+    opt: target=ts
