@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useQuery } from "@connectrpc/connect-query";
 // We import the greet service from the generated file
 // useQuery will automatically handle the ConnectRPC logic for us
-import { greet } from "../generated/greet/v1/greet-GreetService_connectquery";
+import { greet } from "@protos/greet/v1/greet-GreetService_connectquery";
 
 export const Route = createFileRoute("/demo")({
   component: TanStackDemo,

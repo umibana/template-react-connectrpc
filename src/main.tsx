@@ -16,7 +16,7 @@ import { routeTree } from "./routeTree.gen";
 
 
 const connectTransport = createConnectTransport({
-  baseUrl: import.meta.env.VITE_API_URL || "http://localhost:8080",
+  baseUrl: import.meta.env.VITE_API_URL ,
   // We use useBinaryFormat false during development to make it easier to debug
   // We should enable it in production
   useBinaryFormat: true,
