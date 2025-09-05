@@ -40,6 +40,23 @@ npm dev
   - We will import the file that ends with connectquery.ts to handle useQuery
   - For types, we will import the *_pb.ts files
 
+#### Setting up backend for testing
+This template includes a sample backend written in Go, located in the folder go-connect-template.
+To get it up and running, first we need to install the dependecies.
+```sh
+cd go-connect-template
+go mod tidy
+```
+Then compile the protos for it
+```sh 
+buf generate
+```
+Finally, then run it using the go executable
+```sh
+go run cmd/server/main.go
+```
+This should start your backend server on the 8080 port
+
 ### Development 
 
 
