@@ -7,6 +7,7 @@ import { useQuery } from "@connectrpc/connect-query";
 // We import the greet service from the generated file
 // useQuery will automatically handle the ConnectRPC logic for us
 import { greet } from "@protos/greet/v1/greet-GreetService_connectquery";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/demo")({
   component: TanStackDemo,
@@ -39,7 +40,7 @@ function TanStackDemo() {
           onChange={(e) => setNameInput(e.target.value)}
           placeholder="Enter your name"
         />
-        <button 
+        <Button 
           className="ml-2 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
           onClick={() => {
             console.log("Button clicked, nameInput:", nameInput);
@@ -52,7 +53,7 @@ function TanStackDemo() {
           disabled={!nameInput.trim()}
         >
           Send
-        </button>
+        </Button>
         {response && (
           // We will show what we got from the request here.
           // Since the .protos are compiled, we know what will get returned.

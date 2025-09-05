@@ -1,19 +1,15 @@
 {
-  "name": "react-ts-template",
+  "name": "template-react-connectrpc",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "tsc -b && vite build",
-    "ci": "pnpm run ci:lint && pnpm run ci:test",
-    "ci:lint": "pnpm lint",
-    "ci:test": "pnpm test",
     "dev": "vite",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
-    "test": "vitest run",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
@@ -23,6 +19,7 @@
     "@connectrpc/connect": "^2.1.0",
     "@connectrpc/connect-query": "^2.1.1",
     "@connectrpc/connect-web": "^2.1.0",
+    "@radix-ui/react-slot": "^1.2.3",
     "@tanstack/react-query": "^5.85.5",
     "@tanstack/react-router": "^1.131.28",
     "class-variance-authority": "^0.7.1",
